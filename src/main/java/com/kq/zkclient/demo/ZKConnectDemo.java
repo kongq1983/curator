@@ -21,6 +21,7 @@ public class ZKConnectDemo extends Config implements Watcher{
 		try {
 			cdl.await();
 		} catch (Exception e) {
+			e.printStackTrace();
 			System.out.println("ZK Session established.");
 		}
 	}
