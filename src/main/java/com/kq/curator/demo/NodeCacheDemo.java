@@ -7,6 +7,8 @@ import org.apache.curator.framework.recipes.cache.NodeCache;
 import org.apache.curator.framework.recipes.cache.NodeCacheListener;
 import org.apache.curator.retry.ExponentialBackoffRetry;
 
+import com.kq.Config;
+
 /**
  * 监听节点
  * 看监听节点内容有没有变

@@ -6,6 +6,8 @@ import org.apache.curator.framework.recipes.cache.TreeCacheEvent;
 import org.apache.curator.framework.recipes.cache.TreeCacheListener;
 import org.apache.curator.utils.ZKPaths;
 
+import com.kq.Config;
+
 
 /**
  * 	TreeCache

@@ -7,6 +7,8 @@ import org.apache.curator.framework.recipes.cache.PathChildrenCacheEvent;
 import org.apache.curator.framework.recipes.cache.PathChildrenCacheListener;
 import org.apache.curator.retry.RetryNTimes;
 
+import com.kq.Config;
+
 /**
  * 监听子节点
  * 监听自己点的新增、修改、删除
