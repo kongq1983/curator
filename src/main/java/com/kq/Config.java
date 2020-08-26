@@ -10,7 +10,8 @@ import org.apache.zookeeper.data.Stat;
 
 public class Config {
 
-	public static final String ZK_SERVERS = "192.168.6.233:2001";
+//	public static final String ZK_SERVERS = "192.168.6.233:2001";
+	public static final String ZK_SERVERS = "172.16.5.3:2181";
 
 	public static final String CACHE_NODE = "/king";
 	public static final String ROOT_NODE = "/zktest";

@@ -10,6 +10,7 @@ import com.kq.Config;
 
 
 /**
+ * 本例子主演示 监听/king目类下的新建、修改、删除事件
  * 	TreeCache
 	特点：
 	（1）永久监听指定节点下的节点的变化 
@@ -24,6 +25,12 @@ import com.kq.Config;
 	
  * 	@author kongqi
  *
+ * 	example;
+ * 	create /king king
+ * 	create -e /king/one 1
+ * 	create -e /king/two 2
+ * 	create -e /king/three 3
+ *
  */
 public class TreeCacheDemo extends Config {
 
@@ -36,6 +43,8 @@ public class TreeCacheDemo extends Config {
 		cache.start();
 		
 		addListener(cache);
+
+		System.out.println("TreeCacheDemo is Start =========================================");
 
 		Thread.sleep(Integer.MAX_VALUE);
 	}
