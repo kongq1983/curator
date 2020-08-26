@@ -14,6 +14,13 @@ import com.kq.Config;
  * 监听自己点的新增、修改、删除
  * @author kongqi
  *
+ * example:
+ * create /mychild   (这个不会监听到)
+ * create -e /mychild/one 1
+ * create -e /mychild/two 2
+ * create -e /mychild/three 3
+ *
+ *
  */
 public class ChildNodeListenerDemo extends Config {
 
@@ -25,7 +32,7 @@ public class ChildNodeListenerDemo extends Config {
 //		CuratorFramework client = getClient();
 		
 		
-		final PathChildrenCache cache = new PathChildrenCache(client, CACHE_NODE, true);
+		final PathChildrenCache cache = new PathChildrenCache(client, CHILD_CACHE_NODE, true);
 		cache.start();
 
 		cache.getListenable().addListener(new PathChildrenCacheListener() {
@@ -34,16 +41,16 @@ public class ChildNodeListenerDemo extends Config {
 			public void childEvent(CuratorFramework curator, PathChildrenCacheEvent event) throws Exception {
 				switch (event.getType()) {
 				case CHILD_ADDED:
-					System.out.println("add:" + event.getData());
+					System.out.println("ChildNodeListenerDemo add:" + event.getData());
 					break;
 				case CHILD_UPDATED:
-					System.out.println("update:" + event.getData());
+					System.out.println("ChildNodeListenerDemo update:" + event.getData());
 					break;
 				case CHILD_REMOVED:
-					System.out.println("remove:" + event.getData());
+					System.out.println("ChildNodeListenerDemo remove:" + event.getData());
 					break;
 				default:
-					System.out.println("default:" + event.getData());
+					System.out.println("ChildNodeListenerDemo default:" + event.getData());
 					break;
 				}
 			}

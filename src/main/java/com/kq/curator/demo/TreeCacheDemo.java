@@ -26,7 +26,7 @@ import com.kq.Config;
  * 	@author kongqi
  *
  * 	example;
- * 	create /king king
+ * 	create /king king  (这个也会监听到)
  * 	create -e /king/one 1
  * 	create -e /king/two 2
  * 	create -e /king/three 3

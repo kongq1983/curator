@@ -14,6 +14,7 @@ public class Config {
 	public static final String ZK_SERVERS = "172.16.5.3:2181";
 
 	public static final String CACHE_NODE = "/king";
+	public static final String CHILD_CACHE_NODE = "/mychild";
 	public static final String ROOT_NODE = "/zktest";
 
 	/**
