@@ -10,6 +10,7 @@ import org.apache.curator.retry.RetryNTimes;
 import com.kq.Config;
 
 /**
+ * A Path Cache is used to watch a ZNode. Whenever a child is added, updated or removed, the Path Cache will change its state to contain the current set of children, the children's data and the children's state
  * 监听子节点
  * 监听自己点的新增、修改、删除
  * @author kongqi
