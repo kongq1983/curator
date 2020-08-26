@@ -16,6 +16,7 @@ public class Config {
 	public static final String CACHE_NODE = "/king";
 	public static final String CHILD_CACHE_NODE = "/mychild";
 	public static final String ROOT_NODE = "/zktest";
+	public static final String NAMESPACE = "dev";
 
 	/**
 	 * 默认启动了
@@ -27,6 +28,25 @@ public class Config {
 				.retryPolicy(retryPolicy).sessionTimeoutMs(6000).connectionTimeoutMs(3000).build();
 		
 //		.namespace("demo")
+		client.start();
+		return client;
+	}
+
+
+	/**
+	 * 默认启动了
+	 * @return
+	 */
+	public static CuratorFramework getNameSpaceClient(String namespace) {
+		RetryPolicy retryPolicy = new ExponentialBackoffRetry(1000, 3);
+		CuratorFramework client = CuratorFrameworkFactory.builder()
+				.connectString(Config.ZK_SERVERS)
+				.retryPolicy(retryPolicy)
+				.sessionTimeoutMs(60000)
+				.connectionTimeoutMs(3000)
+				.namespace(namespace)  //这里  会建第一层/dev
+				.build();
+
 		client.start();
 		return client;
 	}
